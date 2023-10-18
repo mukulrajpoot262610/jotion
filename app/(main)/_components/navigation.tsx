@@ -13,10 +13,11 @@ import { useParams, usePathname, useRouter } from 'next/navigation';
 import { ElementRef, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import { useMutation } from 'convex/react';
-// import { toast } from 'sonner';
+import { toast } from 'sonner';
 
 import { cn } from '@/lib/utils';
 import { api } from '@/convex/_generated/api';
+import { UserItem } from './userItem';
 // import {
 //   Popover,
 //   PopoverTrigger,
@@ -152,12 +153,12 @@ export const Navigation = () => {
         >
           <ChevronsLeft className='h-6 w-6' />
         </div>
-        {/* <div>
+        <div>
           <UserItem />
-          <Item label='Search' icon={Search} isSearch onClick={search.onOpen} />
+          {/* <Item label='Search' icon={Search} isSearch onClick={search.onOpen} />
           <Item label='Settings' icon={Settings} onClick={settings.onOpen} />
-          <Item onClick={handleCreate} label='New page' icon={PlusCircle} />
-        </div> */}
+          <Item onClick={handleCreate} label='New page' icon={PlusCircle} /> */}
+        </div>
         {/* <div className='mt-4'>
           <DocumentList />
           <Item onClick={handleCreate} icon={Plus} label='Add a page' />
