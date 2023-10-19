@@ -27,7 +27,7 @@ import { UserItem } from './userItem';
 // import { useSettings } from '@/hooks/use-settings';
 
 // import { UserItem } from './user-item';
-// import { Item } from './item';
+import { Item } from './item';
 // import { DocumentList } from './document-list';
 // import { TrashBox } from './trash-box';
 // import { Navbar } from './navbar';
@@ -39,7 +39,7 @@ export const Navigation = () => {
   const params = useParams();
   const pathname = usePathname();
   const isMobile = useMediaQuery('(max-width: 768px)');
-  //   const create = useMutation(api.documents.create);
+  const create = useMutation(api.documents.create);
 
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<'aside'>>(null);
@@ -123,14 +123,14 @@ export const Navigation = () => {
   };
 
   const handleCreate = () => {
-    // const promise = create({ title: 'Untitled' }).then((documentId) =>
-    //   router.push(`/documents/${documentId}`)
-    // );
-    // toast.promise(promise, {
-    //   loading: 'Creating a new note...',
-    //   success: 'New note created!',
-    //   error: 'Failed to create a new note.',
-    // });
+    const promise = create({ title: 'Untitled' }).then((documentId) =>
+      router.push(`/documents/${documentId}`)
+    );
+    toast.promise(promise, {
+      loading: 'Creating a new note...',
+      success: 'New note created!',
+      error: 'Failed to create a new note.',
+    });
   };
 
   return (
@@ -155,9 +155,9 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          {/* <Item label='Search' icon={Search} isSearch onClick={search.onOpen} />
-          <Item label='Settings' icon={Settings} onClick={settings.onOpen} />
-          <Item onClick={handleCreate} label='New page' icon={PlusCircle} /> */}
+          <Item label='Search' icon={Search} isSearch />
+          <Item label='Settings' icon={Settings} />
+          <Item onClick={handleCreate} label='New page' icon={PlusCircle} />
         </div>
         {/* <div className='mt-4'>
           <DocumentList />
