@@ -28,6 +28,10 @@ import { UserItem } from './userItem';
 
 // import { UserItem } from './user-item';
 import { Item } from './item';
+import { DocumentList } from './documentList';
+import { Popover } from '@radix-ui/react-popover';
+import { PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { TrashBox } from './trashBox';
 // import { DocumentList } from './document-list';
 // import { TrashBox } from './trash-box';
 // import { Navbar } from './navbar';
@@ -159,7 +163,7 @@ export const Navigation = () => {
           <Item label='Settings' icon={Settings} />
           <Item onClick={handleCreate} label='New page' icon={PlusCircle} />
         </div>
-        {/* <div className='mt-4'>
+        <div className='mt-4'>
           <DocumentList />
           <Item onClick={handleCreate} icon={Plus} label='Add a page' />
           <Popover>
@@ -173,7 +177,7 @@ export const Navigation = () => {
               <TrashBox />
             </PopoverContent>
           </Popover>
-        </div> */}
+        </div>
         <div
           onMouseDown={handleMouseDown}
           onClick={resetWidth}
